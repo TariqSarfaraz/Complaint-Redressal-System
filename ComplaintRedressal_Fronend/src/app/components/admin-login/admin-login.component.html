@@ -1,0 +1,21 @@
+<h1 class="name" style="background-color: rgba(0, 0, 0, 0.2); font-style: italic; padding-left: 100px; margin-top: auto; color: rgba(0, 0, 0, 0.808)">ADMIN</h1>
+<div class="container" style="width: 50%">
+   <br /><br />
+   <h1 style="text-align: center; width: 50%">LOGIN</h1>
+   <br /><br />
+   <form (ngSubmit)="onSubmit()" #admin="ngForm">
+      <div class="form-group">
+         <label>NAME : </label>
+         <input type="text" class="form-control" name="customerEmail" #adminid="ngModel" required [(ngModel)]="adminLogin.id" placeholder="Enter Name" />
+         <span class="help-block" *ngIf="!adminid.valid && adminid.touched">Please Enter Your Id</span>
+      </div>
+
+      <div class="form-group">
+         <label>PASSWORD : </label>
+         <input type="password" class="form-control" name="customerPassword" required #adminpass="ngModel" [(ngModel)]="adminLogin.password" placeholder="Enter password" />
+         <span class="help-block" *ngIf="!adminpass.valid && adminpass.touched">Please Enter Your Password</span>
+      </div>
+      <br />
+      <button [disabled]="!admin.valid" type="submit" class="btn btn-success btn-lg">LOGIN</button>
+   </form>
+</div>
